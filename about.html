@@ -1,369 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Favicon-->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
 
-  <!--Favicon-->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+    <title>Geriatric Nutrition</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <title>Geriatric Nutrition</title>
-  <link rel="stylesheet" href="style.css">
+  <body>
+    <style>
+      form {
+        border: 3px solid black;
+      }
 
-</head>
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        span.psw {
+          display: block;
+          float: none;
+        }
 
-<body>
+        .cancelbtn {
+          width: 100%;
+        }
+      }
 
-  <style>
-    form {
-      border: 3px solid black;
-    }
+      #bgimg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
 
+      h1 {
+        color: rgb(41, 75, 102);
+        font-family: sans-serif;
+        text-align: center;
+        border-spacing: 0;
+      }
 
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-      span.psw {
+      h3 {
+        color: rgb(25, 65, 88);
+        font-family: sans-serif;
+        text-align: center;
+        border-spacing: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .images {
+        display: inline;
+        margin: 35px;
+        padding: 10px;
+        width: 350px;
+        height: 280px;
+        opacity: 0.95;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+        float: left;
+        border-radius: 7%;
+      }
+
+      .t1:hover .images {
+        opacity: 0.5;
+      }
+
+      .content {
         display: block;
-        float: none;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        top: 0px;
+        height: 100%;
+        max-width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
       }
 
-      .cancelbtn {
+      .foot {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%-50%);
+      }
+
+      #li1 {
+        padding-left: 80px;
+        height: 40px;
+        padding-top: 0px;
+        margin-left: 20px;
+        width: 80px;
+        height: 80px;
+      }
+
+      #li11 {
+        padding-left: 50px;
+        height: 40px;
+        padding-top: 50px;
+        margin-left: 235px;
+        width: 80px;
+        height: 80px;
+      }
+
+      #li1:a {
+        width: 40px;
+        height: 60px;
+        background-color: lime;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        margin: 0 10px;
+        align-items: center;
+        color: red;
+      }
+
+      .button {
+        background-color: #4caf50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+        padding-left: auto;
+        padding-top: auto;
+      }
+
+      h3 {
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        border-spacing: 10px;
+      }
+
+      h1 {
+        color: lime;
+        font-family: sans-serif;
+        text-align: center;
+        border-spacing: 0;
+      }
+
+      .button1 {
+        background-color: limegreen;
+        color: white;
+        border: 2px solid #4caf50;
+        margin-left: 330px;
+        margin-top: 10px;
+      }
+
+      .button1:hover {
+        background-color: white;
+        color: rgb(83, 35, 37);
+      }
+
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font: 400 15px/1.8 "Lato", sans-serif;
+        color: #777;
+      }
+
+      .bg1,
+      .bg2,
+      .bg3 {
+        position: relative;
+        opacity: 0.8;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bg1 {
+        background-image: url("images/bg1.jpg");
+        min-height: 100%;
+      }
+
+      .bg2 {
+        background-image: url("images/bg2.jpg");
+        min-height: 400px;
+      }
+
+      .bg3 {
+        background-image: url("images/bg3.jpg");
+        min-height: 400px;
+      }
+
+      .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
         width: 100%;
+        text-align: center;
+        color: #000;
+        border-radius: 20px;
       }
-    }
 
-    #bgimg {
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    h1 {
-      color: rgb(41, 75, 102);
-      font-family: sans-serif;
-      text-align: center;
-      border-spacing: 0;
-    }
-
-
-    h3 {
-      color: rgb(25, 65, 88);
-      font-family: sans-serif;
-      text-align: center;
-      border-spacing: 0;
-    }
-
-    body {
-      margin: 0;
-    }
-
-
-
-
-    .images {
-      display: inline;
-      margin: 35px;
-      padding: 10px;
-      width: 350px;
-      height: 280px;
-      opacity: .95;
-      transition: .5s ease;
-      backface-visibility: hidden;
-      float: left;
-      border-radius: 7%;
-    }
-
-    .t1:hover .images {
-      opacity: 0.5;
-    }
-
-    .content {
-      display: block;
-      margin: 0px;
-      padding: 0px;
-      position: relative;
-      top: 0px;
-      height: 100%;
-      max-width: 100%;
-      overflow-y: hidden;
-      overflow-x: auto;
-    }
-
-    .foot {
-      display: flex;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%-50%);
-    }
-
-    #li1 {
-      padding-left: 80px;
-      height: 40px;
-      padding-top: 0px;
-      margin-left: 20px;
-      width: 80px;
-      height: 80px;
-    }
-
-    #li11 {
-      padding-left: 50px;
-      height: 40px;
-      padding-top: 50px;
-      margin-left: 235px;
-      width: 80px;
-      height: 80px;
-
-
-    }
-
-    #li1:a {
-      width: 40px;
-      height: 60px;
-      background-color: lime;
-      text-align: center;
-      line-height: 40px;
-      font-size: 20px;
-      margin: 0 10px;
-      align-items: center;
-      color: red;
-    }
-
-
-    .button {
-      background-color: #4CAF50;
-      /* Green */
-      border: none;
-      color: white;
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      -webkit-transition-duration: 0.4s;
-      /* Safari */
-      transition-duration: 0.4s;
-      cursor: pointer;
-      border-radius: 10px;
-      padding-left: auto;
-      padding-top: auto;
-    }
-
-    h3 {
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      border-spacing: 10px;
-    }
-
-    h1 {
-      color: lime;
-      font-family: sans-serif;
-      text-align: center;
-      border-spacing: 0;
-    }
-
-
-
-    .button1 {
-      background-color: limegreen;
-      color: white;
-      border: 2px solid #4CAF50;
-      margin-left: 330px;
-      margin-top: 10px;
-    }
-
-    .button1:hover {
-
-      background-color: white;
-      color: rgb(83, 35, 37);
-    }
-
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-      font: 400 15px/1.8 "Lato", sans-serif;
-      color: #777;
-    }
-
-    .bg1,
-    .bg2,
-    .bg3 {
-      position: relative;
-      opacity: 0.8;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-
-    }
-
-    .bg1 {
-      background-image: url("images/bg1.jpg");
-      min-height: 100%;
-    }
-
-    .bg2 {
-      background-image: url("images/bg2.jpg");
-      min-height: 400px;
-    }
-
-    .bg3 {
-      background-image: url("images/bg3.jpg");
-      min-height: 400px;
-    }
-
-    .caption {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      color: #000;
-      border-radius: 20px;
-    }
-
-    .caption span.border {
-      background-color: #111;
-      color: #fff;
-      padding: 18px;
-      font-size: 25px;
-      letter-spacing: 10px;
-    }
-
-    h3 {
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font: 20px "Lato", sans-serif;
-      color: #111;
-    }
-
-    /* Turn off parallax scrolling for tablets and phones */
-    @media only screen and (max-device-width: 1024px) {
-
-      .bgimg-1,
-      .bgimg-2,
-      .bgimg-3 {
-        background-attachment: scroll;
+      .caption span.border {
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 10px;
       }
-    }
 
-    /* contact me section*/
-    .contact-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+      h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #111;
+      }
 
-    form {
-      width: 50%;
-      padding: 20px;
-      background-color: #f2f2f2;
-      border-radius: 5px;
-    }
+      .goal-container {
+        max-width: 100%;
+        margin: auto;
+        padding: 1rem;
+        color: white;
+        background-color: #0b2239;
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
 
-    label,
-    input,
-    textarea {
-      display: block;
-      margin-bottom: 10px;
-    }
+      .goal-container h1 {
+        font-size: 2rem; /* Adjust as needed */
+      }
 
-    input,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #fff;
-    }
+      .goal-container pre {
+        white-space: pre-wrap; /* Ensure text wraps */
+      }
 
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+      .goal-container p {
+        font-size: 1rem; /* Adjust as needed */
+      }
 
-    input[type="submit"]:hover {
-      background-color: #3e8e41;
-    }
-  </style>
-  <!--Header starts-->
-  <header>
-    <div class="header-left">
-      <div class="logo">
-        <img src="./logo.jpg">
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="nutrition.html">Nutrition</a>
-          </li>
-          <li>
-            <a href="recipes.html">Recipes</a>
-          </li>
-          <li>
-            <a href="fitness.html">Fitness</a>
-          </li>
-          <li>
-            <a href="about.html" class="active">About</a>
-          </li>
+      /* Turn off parallax scrolling for tablets and phones */
+      @media only screen and (max-device-width: 1024px) {
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+          background-attachment: scroll;
+        }
+      }
 
-        </ul>
-        <div class="login-signup">
-          <a href="login.html" class="active">Login/Sign-up</a>
+      /* contact me section*/
+      .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form {
+        width: 50%;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+      }
+
+      label,
+      input,
+      textarea {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media screen and (max-width: 768px) {
+        /* Adjust styles for tablet and mobile screens */
+
+        .content,
+        .bg1,
+        .bg2,
+        .bg3 {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+
+        .goal-container h1 {
+          font-size: 1.5rem;
+        }
+
+        .goal-container p {
+          font-size: 0.9rem;
+        }
+
+        .images {
+          width: 100%;
+          margin: 10px 0;
+        }
+
+        
+        .contact-container form {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        /* Further adjustments for smaller screens */
+        h1,
+        h3 {
+          font-size: smaller;
+        }
+
+        .footer-bottom {
+          padding: 10px;
+        }
+
+        .goal-container h1 {
+          font-size: 2rem;
+        }
+
+        .goal-container p {
+          font-size: 1.0rem;
+        }
+      }
+    </style>
+    <!--Header starts-->
+    <header>
+      <div class="header-left">
+        <div class="logo">
+          <img src="./logo.jpg" />
         </div>
-      </nav>
-    </div>
-    <div class="header-right">
-      <div class="login-signup">
-        <a href="login.html" class="active">Login/Sign-up</a>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="nutrition.html">Nutrition</a>
+            </li>
+            <li>
+              <a href="recipes.html">Recipes</a>
+            </li>
+            <li>
+              <a href="fitness.html">Fitness</a>
+            </li>
+            <li>
+              <a href="about.html" class="active">About</a>
+            </li>
+          </ul>
+          
+        </nav>
       </div>
-      <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
+      <div class="header-right">
+        
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <!--Header ends-->
+
+    <!--Body section-->
+
+    <div class="bg1">
+      <div class="caption">
+        <span
+          class="border"
+          style="
+            color: blanchedalmond;
+            background-color: #0b2239;
+            border-radius: 20px;
+            box-shadow: 10px 10px 13px rgba(0.5, 0, 0, 0.5);
+          "
+        >
+          About Elderly Nutrition
+        </span>
       </div>
     </div>
-  </header>
 
-  <!--Header ends-->
-
-
-
-  <!--Body section-->
-
-  <div class="bg1">
-    <div class="caption">
-      <span class="border"
-        style="color: blanchedalmond; background-color: #0b2239;  border-radius: 20px; box-shadow: 10px 10px 13px rgba(0.5, 0, 0, 0.5);">
-        About Elderly Nutrition </span>
-    </div>
-  </div>
-
-  <div
-    style="color: beige;background-color:#0b2239 ; border-radius: 20px; text-align:center;padding:50px 80px;text-align: justify;">
-    <h3 style="color: blanchedalmond ;text-align:center;">Our Goal</h3>
-    <hr>
-    <pre><h4 style="color: blanchedalmond;">
+    <div class="goal-container">
+      <h1>Our Goal</h1>
+      <pre><p>
                TOPIC: Nutrition and Fitness.
           SITE NAME: 
           
@@ -398,24 +471,31 @@
           perform particular exercises.
            images for visual understanding by the users.
            recipe section for the user to cook healthy foods.
-          q&amp;a to provide one to one solutions.</h4></pre>
-  </div>
-
-  <div class="bg2">
-    <div class="caption">
-      <span class="border"
-        style="background-color:rgb(9, 9, 9);font-size:25px; border-radius: 20px; color: rgb(255, 253, 253);">IF IT
-        DOESN'T
-        CHALLANGE YOU<BR>IT DOESN'T CHANGE YOU</span>
+          q&amp;a to provide one to one solutions.</p></pre>
     </div>
-  </div>
 
-  <div style="position:relative;">
-    <div
-      style="color:blanchedalmond;background-color:#0b2239; border-radius: 20px; text-align:center; padding:50px 80px;text-align: justify;">
-      <h4>Q/A forum<br>
-        <hr>
-        <pre>Doubts:
+    <div class="bg2">
+      <div class="caption">
+        <span
+          class="border"
+          style="
+            background-color: rgb(9, 9, 9);
+            font-size: 25px;
+            border-radius: 20px;
+            color: rgb(255, 253, 253);
+          "
+          >IF IT DOESN'T CHALLANGE YOU<br />IT DOESN'T CHANGE YOU</span
+        >
+      </div>
+    </div>
+
+    
+      <div class="goal-container">
+        <h4>
+          Q/A forum<br />
+          <hr />
+          <pre>
+Doubts:
           1)Does the website store the name, age, and BMI of the elderly and suggest a diet and workout
           plan based on that?
               -Reply-
@@ -423,125 +503,126 @@
           changes to keep it upto date with his/her current growth status
           Comments:
           It is a pretty good idea as it focuses on the users,which is unlike the regular nutrition and fitness apps
-          that covers the diets of vegetarians and meat-eating people at the expense of their money</pre>
-      </h4>
-    </div>
-  </div>
+          that covers the diets of vegetarians and meat-eating people at the expense of their money</pre
+          >
+        </h4>
+      </div>
 
-  <div class="bg3">
-    <div class="caption">
-      <span class="border"
-        style="background-color:black;font-size:25px; border-radius: 20px; color: rgb(255, 254, 254);">THAT'S ALL
-        !</span>
-    </div>
-  </div>
 
-  <div style="position:relative;">
-    <div
-      style="color:blanchedalmond;background-color:#0b2239; border-radius: 20px; text-align:center;padding:50px 80px;text-align: justify;">
-      <h4>
-        <pre>User Reviews:<HR>
+    <div class="bg3">
+      <div class="caption">
+        <span
+          class="border"
+          style="
+            background-color: black;
+            font-size: 25px;
+            border-radius: 20px;
+            color: rgb(255, 254, 254);
+          "
+          >THAT'S ALL !</span
+        >
+      </div>
+    </div>
+
+      <div class="goal-container">
+        <h4>
+          <pre>User Reviews:<HR>
                   The nutrition web app is very useful and it has helped me to reduce weight and also
                   acheive my weight goal and improve my health.
             </pre>
-      </h4>
+        </h4>
+      </div>
     </div>
-  </div>
 
-  <div class="bg3">
-   
+    <div class="bg3">
       <div class="contact-container">
-     
         <form>
-          <h3 style="text-decoration: underline;">Contact Me</h3>
-          <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
-    
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-    
-            <input type="submit" value="Submit">
-          </form>
-    
+          <h3 style="text-decoration: underline">Contact Me</h3>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required autocomplete="off" />
+        
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required autocomplete="off"></textarea>
+        
+          <input type="submit" value="Submit" />
+        </form>
+        
         </form>
       </div>
+    </div>
 
-  </div>
+    <!--scroll-top-->
+    <button id="btnScrollToTop">
+      <i class="material-icons">arrow_upward</i>
+    </button>
 
+    <script>
+      const btnScrollToTop = document.querySelector("#btnScrollToTop");
 
+      btnScrollToTop.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
 
-
-
-
-
-
-  <!--scroll-top-->
-  <button id="btnScrollToTop">
-    <i class="material-icons">arrow_upward</i>
-  </button>
-
-
-  <script>
-   const btnScrollToTop = document.querySelector("#btnScrollToTop");
-
-    btnScrollToTop.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
+        $("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          1000
+        ); // increase the duration to 1000ms (1 second)
       });
 
-      $("html, body").animate({
-        scrollTop: 0
-      }, 1000); // increase the duration to 1000ms (1 second)
-    });
+      const form = document.querySelector("form");
+      const submitButton = form.querySelector('input[type="submit"]');
 
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
+        // Get the form data
+        const formData = new FormData(form);
 
-    const form = document.querySelector('form');
-    const submitButton = form.querySelector('input[type="submit"]');
+        // Send an email using the form data
+        const mailtoLink = `mailto:adamfarhan831@gmail.com?subject=${formData.get(
+          "subject"
+        )}&body=${formData.get("message")}`;
+        window.location.href = mailtoLink;
+      });
+    </script>
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // Get the form data
-      const formData = new FormData(form);
-
-      // Send an email using the form data
-      const mailtoLink = `mailto:adamfarhan831@gmail.com?subject=${formData.get('subject')}&body=${formData.get('message')}`
-      window.location.href = mailtoLink;
-    });
-
-  </script>
-
-
-
-
-
-  <!--footer starts-->
-  <footer class="footer">
-    <div class="footer-bottom">
-        <p>copyright &copy;2023 geriatricNutrition. designed by <span>Abdiaziz</span></p>
+    <!--footer starts-->
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>
+          copyright &copy;2023 geriatricNutrition. designed by
+          <span>Abdiaziz</span>
+        </p>
         <ul class="socials">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
         </ul>
-    </div>
-        
+      </div>
     </footer>
 
-  <!--Footer ends-->
+    <!--Footer ends-->
 
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
