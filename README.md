@@ -3,6 +3,9 @@
 ## Description
 Elderly Nutrition is a web application designed to assist the elderly in managing their health and improving their lifestyle through diet and exercise. It offers workout plans, diet plans for chronic diseases, video tutorials for exercises, visual aids, healthy recipes, and a Q&A section for personalized advice.
 
+## Deployment 
+Here is the link to view the web application https://elderly-nutrition.vercel.app/
+
 ## Features
 - **Workout Plans**: Targeted exercises for different muscle groups suitable for older adults.
 - **Diet Plans**: Specialized diets for managing chronic diseases and maintaining health.
@@ -53,5 +56,5 @@ This project is licensed under the [MIT License](LICENSE.txt).
 Thank you for considering Elderly Nutrition for your journey towards a healthier lifestyle.
 
 
-Here is the link to view the web application https://elderly-nutrition.netlify.app/index.html
+
 
